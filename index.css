@@ -1,0 +1,936 @@
+:root {
+    color-scheme: light;
+    --ink: #22231f;
+    --muted: #898980;
+    --paper: #f6f5f0;
+    --line: #e9e7df;
+    --green: #315e49;
+    --mono: "DM Mono", monospace;
+    --sans: "DM Sans", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #81a98e;
+    outline-offset: 3px;
+}
+
+.page {
+    width: min(1192px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 29px 0 64px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: -.045em;
+}
+
+.brand-mark {
+    display: grid;
+    width: 31px;
+    height: 31px;
+    place-items: center;
+    border-radius: 50%;
+    background: #e5eadf;
+    color: var(--green);
+    font-size: 16px;
+}
+
+.brand-caption,
+.eyebrow,
+.mono {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+}
+
+.brand-caption {
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #5d5e56;
+    font-size: 12px;
+}
+
+.avatar {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid #e4e1d8;
+    border-radius: 50%;
+    background: #eeece4;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.intro {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 36px 0 24px;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: var(--green);
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(31px, 4.6vw, 48px);
+    font-weight: 600;
+    letter-spacing: -.075em;
+    line-height: 1;
+}
+
+.intro-copy {
+    margin: 12px 0 0;
+    color: #77776e;
+    font-size: 13px;
+}
+
+.collection-number {
+    padding-bottom: 4px;
+    color: #83837b;
+    white-space: nowrap;
+}
+
+.collection-number strong {
+    margin-right: 5px;
+    color: var(--ink);
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: -.06em;
+}
+
+.bento {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.tile {
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+    border: 1px solid rgba(32, 34, 29, .07);
+    border-radius: 16px;
+}
+
+.feature {
+    display: flex;
+    min-height: 304px;
+    grid-column: span 6;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 38px;
+    background:
+        radial-gradient(ellipse at 75% 48%, rgba(255, 255, 255, .83), transparent 36%),
+        linear-gradient(120deg, #e7e9dc, #edf0e7 56%, #e0e7dd);
+}
+
+.feature-copy {
+    z-index: 1;
+    max-width: 280px;
+}
+
+.feature .eyebrow {
+    color: #577461;
+}
+
+.feature h2 {
+    margin: 0;
+    font-size: clamp(34px, 5vw, 58px);
+    font-weight: 600;
+    letter-spacing: -.085em;
+    line-height: .96;
+}
+
+.feature-subtitle {
+    margin: 11px 0 21px;
+    color: #72786c;
+    font-size: 12px;
+}
+
+.type-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 10px;
+    border: 1px solid rgba(49, 94, 73, .15);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .5);
+    color: #466550;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.feature-art {
+    width: min(47%, 260px);
+    height: 258px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 16px rgba(56, 67, 47, .15));
+    transform: rotate(-7deg);
+}
+
+.feature-index {
+    position: absolute;
+    right: 17px;
+    bottom: 15px;
+    color: rgba(48, 70, 52, .48);
+}
+
+.side-stack {
+    display: grid;
+    grid-column: span 6;
+    grid-template-rows: 1fr;
+    gap: 14px;
+    min-height: 304px;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 23px 25px;
+    background: #fffefa;
+}
+
+.game-info-heading {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 17px;
+}
+
+.game-info-heading h2 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -.055em;
+}
+
+.game-info-heading .eyebrow {
+    margin-bottom: 6px;
+}
+
+.local-badge {
+    padding: 6px 8px;
+    border: 1px solid #e6e5dc;
+    border-radius: 999px;
+    color: #77776e;
+    white-space: nowrap;
+}
+
+.game-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+}
+
+.game-field {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+}
+
+.game-field:first-child {
+    grid-column: 1 / -1;
+}
+
+.game-field > span {
+    color: #77776e;
+}
+
+.game-field-value {
+    width: 100%;
+    min-width: 0;
+    min-height: 40px;
+    margin: 0;
+    padding: 10px 11px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fbfaf6;
+    color: var(--ink);
+    font-size: 12px;
+}
+
+.favorite-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    color: #a64f49;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.collection-section {
+    margin-top: 30px;
+}
+
+.collection-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.collection-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -.05em;
+}
+
+.collection-header p {
+    margin: 6px 0 0;
+    color: #77776e;
+    font-size: 12px;
+}
+
+.collection-total {
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-areas:
+        "lucario lucario blaziken typhlosion"
+        "mewtwo mewtwo zoroark rayquaza"
+        "mewtwo mewtwo absol gallade";
+    grid-template-rows: repeat(3, minmax(300px, auto));
+    gap: 14px;
+}
+
+.collection-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: 13px;
+    border: 1px solid rgba(32, 34, 29, .08);
+    border-radius: 15px;
+    background: #fffefa;
+}
+
+.collection-card--lucario {
+    grid-area: lucario;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    background: #f0eee6;
+}
+
+.collection-card--blaziken {
+    grid-area: blaziken;
+    background: #f4e9df;
+}
+
+.collection-card--typhlosion {
+    grid-area: typhlosion;
+    background: #f3e9df;
+}
+
+.collection-card--mewtwo {
+    grid-area: mewtwo;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 18px;
+    background: #ece8f3;
+}
+
+.collection-card--zoroark {
+    grid-area: zoroark;
+    background: #eee8f1;
+}
+
+.collection-card--rayquaza {
+    grid-area: rayquaza;
+    background: #e7eddf;
+}
+
+.collection-card--absol {
+    grid-area: absol;
+    background: #e6eceb;
+}
+
+.collection-card--gallade {
+    grid-area: gallade;
+    background: #e9e8f1;
+}
+
+.collection-card-image {
+    display: block;
+    width: 100%;
+    height: 174px;
+    border-radius: 9px;
+    object-fit: contain;
+}
+
+.collection-card--lucario .collection-card-image {
+    width: 39%;
+    height: 100%;
+    flex: 0 0 39%;
+}
+
+.collection-card--mewtwo .collection-card-image {
+    width: 47%;
+    height: 100%;
+    flex: 0 0 47%;
+}
+
+.collection-card-details {
+    min-width: 0;
+    padding: 12px 2px 2px;
+}
+
+.collection-card--lucario .collection-card-details,
+.collection-card--mewtwo .collection-card-details {
+    flex: 1;
+}
+
+.collection-card--mewtwo .collection-card-details {
+    padding: 12px 4px;
+}
+
+.collection-card-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.collection-card-title h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -.035em;
+}
+
+.collection-card-title span {
+    color: #85857b;
+}
+
+.collection-card-meta {
+    margin: 6px 0 0;
+    color: #77776e;
+    font-size: 11px;
+}
+
+.collection-card-attack {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 11px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    color: #56574f;
+    font-size: 11px;
+}
+
+.collection-card-attack strong {
+    color: var(--ink);
+}
+
+.collection-card-effect {
+    margin: 6px 0 0;
+    color: #85857b;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.stat-tile {
+    display: flex;
+    min-height: 145px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 22px;
+    background: #fffefa;
+}
+
+.stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--muted);
+}
+
+.stat-icon {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border-radius: 9px;
+    background: #f0efe8;
+    color: #76776d;
+    font-size: 14px;
+}
+
+.stat-value {
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: -.08em;
+    line-height: 1;
+}
+
+.stat-note {
+    margin-left: 7px;
+    color: #85857b;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.progress-track {
+    height: 4px;
+    margin-top: 12px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #eeede7;
+}
+
+.progress-fill {
+    width: 8%;
+    height: 100%;
+    border-radius: inherit;
+    background: #7e9c78;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 31px 0 15px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -.045em;
+}
+
+.section-heading .mono {
+    color: var(--muted);
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.filter-button {
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: transparent;
+    color: #76766e;
+    cursor: pointer;
+    font-size: 11px;
+    transition: background .18s ease, color .18s ease, border-color .18s ease;
+}
+
+.filter-button:hover {
+    color: var(--ink);
+}
+
+.filter-button[aria-pressed="true"] {
+    border-color: #315e49;
+    background: #315e49;
+    color: white;
+}
+
+.search {
+    display: flex;
+    width: min(230px, 42%);
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: #fffefa;
+    color: #8b8b82;
+}
+
+.search svg {
+    flex: 0 0 auto;
+}
+
+.search input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 11px;
+}
+
+.search input::placeholder {
+    color: #a1a097;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.pokemon-card {
+    display: flex;
+    min-height: 242px;
+    flex-direction: column;
+    padding: 15px;
+    background: var(--card-bg);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(37, 39, 32, .08);
+}
+
+.card-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-number {
+    color: rgba(43, 48, 39, .56);
+}
+
+.favorite {
+    display: grid;
+    width: 27px;
+    height: 27px;
+    place-items: center;
+    border: 1px solid rgba(40, 40, 30, .09);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .43);
+    color: #77786e;
+    font-size: 15px;
+}
+
+.favorite.is-favorite {
+    color: #c66b57;
+}
+
+.pokemon-art-wrap {
+    display: grid;
+    flex: 1;
+    min-height: 132px;
+    place-items: center;
+}
+
+.pokemon-art {
+    width: min(100%, 143px);
+    height: 138px;
+    object-fit: contain;
+    filter: drop-shadow(0 9px 8px rgba(39, 41, 32, .13));
+    transition: transform .2s ease;
+}
+
+.pokemon-card:hover .pokemon-art {
+    transform: scale(1.055) rotate(-3deg);
+}
+
+.card-bottom {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(40, 40, 30, .09);
+}
+
+.card-bottom h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -.04em;
+}
+
+.card-type {
+    margin: 4px 0 0;
+    color: #79796f;
+    font-size: 10px;
+}
+
+.rarity {
+    flex-shrink: 0;
+    padding: 5px 7px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .5);
+    color: #73746a;
+}
+
+.empty-state {
+    display: none;
+    grid-column: 1 / -1;
+    padding: 35px 15px;
+    border: 1px dashed #dcd9cf;
+    border-radius: 14px;
+    color: #77776e;
+    text-align: center;
+    font-size: 13px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 26px;
+    padding-top: 15px;
+    border-top: 1px solid var(--line);
+    color: #929188;
+}
+
+.footer .mono {
+    font-size: 9px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 850px) {
+    .page {
+        width: min(100% - 40px, 680px);
+    }
+
+    .feature {
+        grid-column: span 6;
+        padding: 27px;
+    }
+
+    .side-stack {
+        grid-column: span 6;
+    }
+
+    .collection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "lucario lucario"
+            "mewtwo mewtwo"
+            "mewtwo mewtwo"
+            "blaziken typhlosion"
+            "zoroark rayquaza"
+            "absol gallade";
+        grid-template-rows: repeat(6, minmax(265px, auto));
+    }
+
+    .collection-card--lucario .collection-card-image {
+        width: 30%;
+        flex-basis: 30%;
+    }
+
+    .collection-card--mewtwo .collection-card-image {
+        width: 38%;
+        flex-basis: 38%;
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        width: calc(100% - 30px);
+        padding-top: 20px;
+    }
+
+    .brand-caption,
+    .profile-name {
+        display: none;
+    }
+
+    .intro {
+        align-items: start;
+        padding: 29px 0 20px;
+    }
+
+    .collection-number {
+        padding-top: 4px;
+        font-size: 10px;
+    }
+
+    .collection-number strong {
+        font-size: 19px;
+    }
+
+    .bento {
+        gap: 10px;
+    }
+
+    .feature {
+        min-height: 230px;
+        grid-column: 1 / -1;
+        padding: 23px;
+    }
+
+    .feature-art {
+        width: 46%;
+        height: 200px;
+    }
+
+    .side-stack {
+        min-height: 0;
+        grid-column: 1 / -1;
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+
+    .game-info {
+        padding: 19px;
+    }
+
+    .collection-section {
+        margin-top: 25px;
+    }
+
+    .section-heading {
+        margin-top: 26px;
+    }
+
+    .controls {
+        align-items: stretch;
+        flex-direction: column-reverse;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .collection-header {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .collection-grid {
+        gap: 10px;
+        grid-template-rows: repeat(6, minmax(235px, auto));
+    }
+
+    .collection-card {
+        padding: 10px;
+    }
+
+    .collection-card-image {
+        height: 125px;
+    }
+
+    .collection-card--lucario {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .collection-card--lucario .collection-card-image {
+        width: 34%;
+        flex-basis: 34%;
+    }
+
+    .collection-card--mewtwo {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .collection-card--mewtwo .collection-card-image {
+        width: 43%;
+        flex-basis: 43%;
+    }
+
+    .collection-card-title {
+        align-items: start;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .collection-card--lucario .collection-card-title,
+    .collection-card--mewtwo .collection-card-title {
+        align-items: baseline;
+        flex-direction: row;
+    }
+
+    .collection-card-meta,
+    .collection-card-effect,
+    .collection-card-attack {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 370px) {
+    .feature {
+        padding: 18px;
+    }
+
+    .feature-art {
+        width: 42%;
+    }
+
+    .filter-button {
+        padding: 7px 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
