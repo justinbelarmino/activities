@@ -18,10 +18,10 @@
         <header class="topbar">
             <div class="brand">
                 <span class="brand-mark" aria-hidden="true">◉</span>
-                <span>Pokémon TCG Pocket <span class="brand-caption">/ trainer profile</span></span>
+                <span>Pokémon TCG Pocket <span class="brand-caption d-none d-sm-inline">/ trainer profile</span></span>
             </div>
             <div class="profile">
-                <span class="profile-name">My game profile</span>
+                <span class="profile-name d-none d-sm-inline">My game profile</span>
                 <span class="avatar" aria-hidden="true">PT</span>
             </div>
         </header>
@@ -34,8 +34,9 @@
             </div>
         </section>
 
-        <section class="bento" aria-label="Game profile and favorite Pokémon">
-            <article class="tile feature">
+        <section class="bento row g-3 mx-0" aria-label="Game profile and favorite Pokémon">
+            <div class="col-12 col-lg-6">
+                <article class="tile feature">
                 <div class="feature-copy">
                     <p class="eyebrow">My favorite Pokémon</p>
                     <h2>Mewtwo</h2>
@@ -45,9 +46,10 @@
                 </div>
                 <img class="feature-art" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png" alt="Official artwork of Mewtwo" />
                 <span class="feature-index mono">#150</span>
-            </article>
+                </article>
+            </div>
 
-            <div class="side-stack">
+            <div class="side-stack col-12 col-lg-6">
                 <section class="tile game-info" aria-labelledby="game-info-title">
                     <div>
                         <div class="game-info-heading">
@@ -77,7 +79,7 @@
         </section>
 
         <section class="collection-section" aria-labelledby="cards-title">
-            <div class="collection-header">
+            <div class="collection-header d-flex flex-column flex-sm-row align-items-sm-end">
                 <div>
                     <p class="eyebrow">My cards</p>
                     <h2 id="cards-title">Card collection</h2>
@@ -85,8 +87,9 @@
                 </div>
                 <span class="collection-total mono">08 cards&nbsp; · &nbsp;Pocket collection</span>
             </div>
-            <div class="collection-grid">
-                <article class="collection-card collection-card--lucario">
+            <div class="collection-grid row g-3 mx-0">
+                <div class="col-12 col-xl-6">
+                <article class="collection-card collection-card--lucario h-100">
                     <img class="collection-card-image" src="mega-lucario-ex.png" alt="Mega Lucario ex Pokémon TCG Pocket card, 190 HP" />
                     <div class="collection-card-details">
                         <div class="collection-card-title">
@@ -100,7 +103,9 @@
                         </div>
                     </div>
                 </article>
-                <article class="collection-card collection-card--blaziken">
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--blaziken h-100">
                     <img class="collection-card-image" src="mega-blaziken-ex.png" alt="Mega Blaziken ex Pokémon TCG Pocket card, 210 HP" loading="lazy" />
                     <div class="collection-card-details">
                         <div class="collection-card-title">
@@ -114,7 +119,9 @@
                         </div>
                     </div>
                 </article>
-                <article class="collection-card collection-card--typhlosion">
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--typhlosion h-100">
                     <img class="collection-card-image" src="pocket-card-03.png" alt="Typhlosion ex Pokémon TCG Pocket card, 180 HP" loading="lazy" />
                     <div class="collection-card-details">
                         <div class="collection-card-title">
@@ -129,7 +136,9 @@
                         <p class="collection-card-effect">Flip until tails; discard an Energy from your opponent's Active Pokémon for each heads.</p>
                     </div>
                 </article>
-                <article class="collection-card collection-card--mewtwo">
+                </div>
+                <div class="col-12 col-xl-6">
+                <article class="collection-card collection-card--mewtwo h-100">
                     <img class="collection-card-image" src="pocket-card-04.png" alt="Mewtwo ex Pokémon TCG Pocket card, 150 HP" loading="lazy" />
                     <div class="collection-card-details">
                         <div class="collection-card-title">
@@ -148,7 +157,9 @@
                         <p class="collection-card-effect">Psydrive discards 2 Psychic Energy from this Pokémon.</p>
                     </div>
                 </article>
-                <article class="collection-card collection-card--zoroark">
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--zoroark h-100">
                     <img class="collection-card-image" src="pocket-card-05.png" alt="Zoroark ex Pokémon TCG Pocket card, 150 HP" loading="lazy" />
                     <div class="collection-card-details">
                         <div class="collection-card-title">
@@ -163,7 +174,9 @@
                         <p class="collection-card-effect">Does 30 damage for each of your Benched Pokémon.</p>
                     </div>
                 </article>
-                <article class="collection-card collection-card--rayquaza">
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--rayquaza h-100">
                     <img class="collection-card-image" src="pocket-card-06.png" alt="Mega Rayquaza ex Pokémon TCG Pocket card, 180 HP" loading="lazy" />
                     <div class="collection-card-details">
                         <div class="collection-card-title">
@@ -178,7 +191,9 @@
                         <p class="collection-card-effect">Discard all Fire and Lightning Energy from this Pokémon; does 50 damage for each Energy discarded.</p>
                     </div>
                 </article>
-                <article class="collection-card collection-card--absol">
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--absol h-100">
                     <img class="collection-card-image" src="pocket-card-07.png" alt="Mega Absol ex Pokémon TCG Pocket card, 170 HP" loading="lazy" />
                     <div class="collection-card-details">
                         <div class="collection-card-title">
@@ -193,7 +208,9 @@
                         <p class="collection-card-effect">Reveal your opponent's hand and discard a Supporter card you find there.</p>
                     </div>
                 </article>
-                <article class="collection-card collection-card--gallade">
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--gallade h-100">
                     <img class="collection-card-image" src="pocket-card-08.png" alt="Mega Gallade ex Pokémon TCG Pocket card, 220 HP" loading="lazy" />
                     <div class="collection-card-details">
                         <div class="collection-card-title">
@@ -208,6 +225,7 @@
                         <p class="collection-card-effect">If you played a Supporter card from your hand this turn, this attack does 50 more damage.</p>
                     </div>
                 </article>
+                </div>
             </div>
         </section>
 
@@ -217,7 +235,6 @@
         </footer>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
