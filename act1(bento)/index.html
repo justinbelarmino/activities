@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f5f0" />
+    <title>Pokémon TCG Pocket — Trainer Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <main class="page">
+        <header class="topbar">
+            <div class="brand">
+                <span class="brand-mark" aria-hidden="true">◉</span>
+                <span>Pokémon TCG Pocket <span class="brand-caption d-none d-sm-inline">/ trainer profile</span></span>
+            </div>
+            <div class="profile">
+                <span class="profile-name d-none d-sm-inline">My game profile</span>
+                <span class="avatar" aria-hidden="true">PT</span>
+            </div>
+        </header>
+
+        <section class="intro" aria-labelledby="page-title">
+            <div>
+                <p class="eyebrow">Pokémon Trading Card Game Pocket</p>
+                <h1 id="page-title">My Pocket profile</h1>
+                <p class="intro-copy">Your player details and favorite Pokémon, together in one place.</p>
+            </div>
+        </section>
+
+        <section class="bento row g-3 mx-0" aria-label="Game profile and favorite Pokémon">
+            <div class="col-12 col-lg-6">
+                <article class="tile feature">
+                <div class="feature-copy">
+                    <p class="eyebrow">My favorite Pokémon</p>
+                    <h2>Mewtwo</h2>
+                    <p class="feature-subtitle">Genetic Pokémon · The star of my collection.</p>
+                    <span class="type-pill"><span aria-hidden="true">✳</span> Psychic&nbsp; · &nbsp;Legendary</span>
+                    <div class="favorite-pill"><span aria-hidden="true">♥</span> Favorite Pokémon</div>
+                </div>
+                <img class="feature-art" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png" alt="Official artwork of Mewtwo" />
+                <span class="feature-index mono">#150</span>
+                </article>
+            </div>
+
+            <div class="side-stack col-12 col-lg-6">
+                <section class="tile game-info" aria-labelledby="game-info-title">
+                    <div>
+                        <div class="game-info-heading">
+                            <div>
+                                <p class="eyebrow">Your account</p>
+                                <h2 id="game-info-title">Game info</h2>
+                            </div>
+                            <span class="local-badge mono">Trainer details</span>
+                        </div>
+                        <div class="game-fields">
+                            <div class="game-field">
+                                <span class="mono">In-game name</span>
+                                <p class="game-field-value">roiyuji</p>
+                            </div>
+                            <div class="game-field">
+                                <span class="mono">Support ID</span>
+                                <p class="game-field-value">zNQTSfzoLp</p>
+                            </div>
+                            <div class="game-field">
+                                <span class="mono">Friend ID</span>
+                                <p class="game-field-value">2117-6378-3476-6579</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="collection-section" aria-labelledby="cards-title">
+            <div class="collection-header d-flex flex-column flex-sm-row align-items-sm-end">
+                <div>
+                    <p class="eyebrow">My cards</p>
+                    <h2 id="cards-title">Card collection</h2>
+                    <p>Your Pokémon TCG Pocket cards, collected in one place.</p>
+                </div>
+                <span class="collection-total mono">08 cards&nbsp; · &nbsp;Pocket collection</span>
+            </div>
+            <div class="collection-grid row g-3 mx-0">
+                <div class="col-12 col-xl-6">
+                <article class="collection-card collection-card--lucario h-100">
+                    <img class="collection-card-image" src="mega-lucario-ex.png" alt="Mega Lucario ex Pokémon TCG Pocket card, 190 HP" />
+                    <div class="collection-card-details">
+                        <div class="collection-card-title">
+                            <h3>Mega Lucario ex</h3>
+                            <span class="mono">190 HP</span>
+                        </div>
+                        <p class="collection-card-meta">Stage 1&nbsp; · &nbsp;Fighting&nbsp; · &nbsp;Evolves from Riolu</p>
+                        <div class="collection-card-attack">
+                            <span>Fighting Pulse</span>
+                            <strong>90+</strong>
+                        </div>
+                    </div>
+                </article>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--blaziken h-100">
+                    <img class="collection-card-image" src="mega-blaziken-ex.png" alt="Mega Blaziken ex Pokémon TCG Pocket card, 210 HP" loading="lazy" />
+                    <div class="collection-card-details">
+                        <div class="collection-card-title">
+                            <h3>Mega Blaziken ex</h3>
+                            <span class="mono">210 HP</span>
+                        </div>
+                        <p class="collection-card-meta">Stage 2&nbsp; · &nbsp;Fire&nbsp; · &nbsp;Evolves from Combusken</p>
+                        <div class="collection-card-attack">
+                            <span>Mega Burning</span>
+                            <strong>120 + Burn</strong>
+                        </div>
+                    </div>
+                </article>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--typhlosion h-100">
+                    <img class="collection-card-image" src="pocket-card-03.png" alt="Typhlosion ex Pokémon TCG Pocket card, 180 HP" loading="lazy" />
+                    <div class="collection-card-details">
+                        <div class="collection-card-title">
+                            <h3>Typhlosion ex</h3>
+                            <span class="mono">180 HP</span>
+                        </div>
+                        <p class="collection-card-meta">Stage 2&nbsp; · &nbsp;Fire&nbsp; · &nbsp;Evolves from Quilava</p>
+                        <div class="collection-card-attack">
+                            <span>Destructive Inferno</span>
+                            <strong>110</strong>
+                        </div>
+                        <p class="collection-card-effect">Flip until tails; discard an Energy from your opponent's Active Pokémon for each heads.</p>
+                    </div>
+                </article>
+                </div>
+                <div class="col-12 col-xl-6">
+                <article class="collection-card collection-card--mewtwo h-100">
+                    <img class="collection-card-image" src="pocket-card-04.png" alt="Mewtwo ex Pokémon TCG Pocket card, 150 HP" loading="lazy" />
+                    <div class="collection-card-details">
+                        <div class="collection-card-title">
+                            <h3>Mewtwo ex</h3>
+                            <span class="mono">150 HP</span>
+                        </div>
+                        <p class="collection-card-meta">Basic&nbsp; · &nbsp;Psychic</p>
+                        <div class="collection-card-attack">
+                            <span>Psychic Sphere</span>
+                            <strong>50</strong>
+                        </div>
+                        <div class="collection-card-attack">
+                            <span>Psydrive</span>
+                            <strong>150</strong>
+                        </div>
+                        <p class="collection-card-effect">Psydrive discards 2 Psychic Energy from this Pokémon.</p>
+                    </div>
+                </article>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--zoroark h-100">
+                    <img class="collection-card-image" src="pocket-card-05.png" alt="Zoroark ex Pokémon TCG Pocket card, 150 HP" loading="lazy" />
+                    <div class="collection-card-details">
+                        <div class="collection-card-title">
+                            <h3>Zoroark ex</h3>
+                            <span class="mono">150 HP</span>
+                        </div>
+                        <p class="collection-card-meta">Stage 1&nbsp; · &nbsp;Darkness&nbsp; · &nbsp;Evolves from Zorua</p>
+                        <div class="collection-card-attack">
+                            <span>Brutal Bash</span>
+                            <strong>30×</strong>
+                        </div>
+                        <p class="collection-card-effect">Does 30 damage for each of your Benched Pokémon.</p>
+                    </div>
+                </article>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--rayquaza h-100">
+                    <img class="collection-card-image" src="pocket-card-06.png" alt="Mega Rayquaza ex Pokémon TCG Pocket card, 180 HP" loading="lazy" />
+                    <div class="collection-card-details">
+                        <div class="collection-card-title">
+                            <h3>Mega Rayquaza ex</h3>
+                            <span class="mono">180 HP</span>
+                        </div>
+                        <p class="collection-card-meta">Basic&nbsp; · &nbsp;Dragon</p>
+                        <div class="collection-card-attack">
+                            <span>Mega Burst</span>
+                            <strong>50×</strong>
+                        </div>
+                        <p class="collection-card-effect">Discard all Fire and Lightning Energy from this Pokémon; does 50 damage for each Energy discarded.</p>
+                    </div>
+                </article>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--absol h-100">
+                    <img class="collection-card-image" src="pocket-card-07.png" alt="Mega Absol ex Pokémon TCG Pocket card, 170 HP" loading="lazy" />
+                    <div class="collection-card-details">
+                        <div class="collection-card-title">
+                            <h3>Mega Absol ex</h3>
+                            <span class="mono">170 HP</span>
+                        </div>
+                        <p class="collection-card-meta">Basic&nbsp; · &nbsp;Darkness</p>
+                        <div class="collection-card-attack">
+                            <span>Darkness Claw</span>
+                            <strong>80</strong>
+                        </div>
+                        <p class="collection-card-effect">Reveal your opponent's hand and discard a Supporter card you find there.</p>
+                    </div>
+                </article>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                <article class="collection-card collection-card--gallade h-100">
+                    <img class="collection-card-image" src="pocket-card-08.png" alt="Mega Gallade ex Pokémon TCG Pocket card, 220 HP" loading="lazy" />
+                    <div class="collection-card-details">
+                        <div class="collection-card-title">
+                            <h3>Mega Gallade ex</h3>
+                            <span class="mono">220 HP</span>
+                        </div>
+                        <p class="collection-card-meta">Stage 2&nbsp; · &nbsp;Fighting&nbsp; · &nbsp;Evolves from Kirlia</p>
+                        <div class="collection-card-attack">
+                            <span>Resonating Blade</span>
+                            <strong>100+</strong>
+                        </div>
+                        <p class="collection-card-effect">If you played a Supporter card from your hand this turn, this attack does 50 more damage.</p>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span class="mono">Pokémon TCG Pocket trainer page</span>
+            <span class="mono">Trainer details</span>
+        </footer>
+    </main>
+
+</body>
+
+</html>
