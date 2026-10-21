@@ -158,7 +158,8 @@
         const pokemon = JSON.parse(document.getElementById("pokemon-data").textContent);
         const grid = document.getElementById("pokemon-grid");
 
-        pokemon.forEach((entry) => {
+        for (let i = 0; i < pokemon.length; i++) {
+            const entry = pokemon[i];
             const column = document.createElement("div");
             column.className = "col-12 col-lg-6";
 
@@ -192,17 +193,20 @@
             const tags = document.createElement("div");
             tags.className = "pokemon-tags d-flex flex-wrap gap-2";
 
-            [entry.stage, entry.type, entry.hp].forEach((label) => {
+            const labels = [entry.stage, entry.type, entry.hp];
+            for (let j = 0; j < labels.length; j++) {
+                const label = labels[j];
                 const badge = document.createElement("span");
                 badge.className = "badge rounded-pill text-bg-light border";
                 badge.textContent = label;
                 tags.append(badge);
-            });
+            }
 
             const skills = document.createElement("div");
             skills.className = "d-grid gap-2 mt-3";
 
-            entry.skills.forEach((skill) => {
+            for (let j = 0; j < entry.skills.length; j++) {
+                const skill = entry.skills[j];
                 const skillRow = document.createElement("div");
                 skillRow.className = "border-top pt-2";
 
@@ -227,14 +231,14 @@
                 }
 
                 skills.append(skillRow);
-            });
+            }
 
             details.append(number, name, tags, skills);
             cardLayout.append(imageColumn, details);
             card.append(cardLayout);
             column.append(card);
             grid.append(column);
-        });
+        }
     </script>
 </body>
 
