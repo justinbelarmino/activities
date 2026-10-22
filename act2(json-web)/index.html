@@ -155,89 +155,58 @@
         ]
     </script>
     <script>
-        const pokemon = JSON.parse(document.getElementById("pokemon-data").textContent);
-        const grid = document.getElementById("pokemon-grid");
+        var pokemon = JSON.parse(document.getElementById("pokemon-data").textContent);
+        var elGrid = document.getElementById("pokemon-grid");
 
-        for (let i = 0; i < pokemon.length; i++) {
-            const entry = pokemon[i];
-            const column = document.createElement("div");
-            column.className = "col-12 col-lg-6";
+        for (var i = 0; i < pokemon.length; i++) {
+            var entry = pokemon[i];
+            var skills = "";
 
-            const card = document.createElement("article");
-            card.className = "card h-100 border-0 rounded-4 shadow-sm p-3 pokemon-box";
-
-            const cardLayout = document.createElement("div");
-            cardLayout.className = "row g-3 align-items-center h-100";
-
-            const image = document.createElement("img");
-            image.className = "img-fluid rounded-3 shadow pokemon-card-image";
-            image.src = entry.image;
-            image.alt = `${entry.name} Pokémon card`;
-            image.loading = "lazy";
-
-            const imageColumn = document.createElement("div");
-            imageColumn.className = "col-4";
-            imageColumn.append(image);
-
-            const details = document.createElement("div");
-            details.className = "col-8 min-w-0";
-
-            const number = document.createElement("span");
-            number.className = "pokemon-number";
-            number.textContent = entry.number;
-
-            const name = document.createElement("h2");
-            name.className = "pokemon-name";
-            name.textContent = entry.name;
-
-            const tags = document.createElement("div");
-            tags.className = "pokemon-tags d-flex flex-wrap gap-2";
-
-            const labels = [entry.stage, entry.type, entry.hp];
-            for (let j = 0; j < labels.length; j++) {
-                const label = labels[j];
-                const badge = document.createElement("span");
-                badge.className = "badge rounded-pill text-bg-light border";
-                badge.textContent = label;
-                tags.append(badge);
-            }
-
-            const skills = document.createElement("div");
-            skills.className = "d-grid gap-2 mt-3";
-
-            for (let j = 0; j < entry.skills.length; j++) {
-                const skill = entry.skills[j];
-                const skillRow = document.createElement("div");
-                skillRow.className = "border-top pt-2";
-
-                const skillHeading = document.createElement("div");
-                skillHeading.className = "d-flex justify-content-between align-items-baseline gap-2";
-
-                const skillName = document.createElement("h3");
-                skillName.className = "pokemon-skill-name";
-                skillName.textContent = skill.name;
-
-                const skillDamage = document.createElement("span");
-                skillDamage.className = "pokemon-skill-damage";
-                skillDamage.textContent = skill.damage;
-                skillHeading.append(skillName, skillDamage);
-                skillRow.append(skillHeading);
+            for (var j = 0; j < entry.skills.length; j++) {
+                var skill = entry.skills[j];
+                var effect = "";
 
                 if (skill.effect) {
-                    const skillEffect = document.createElement("p");
-                    skillEffect.className = "pokemon-skill-effect";
-                    skillEffect.textContent = skill.effect;
-                    skillRow.append(skillEffect);
+                    effect = `<p class="pokemon-skill-effect">${skill.effect}</p>`;
                 }
 
-                skills.append(skillRow);
+                skills += `
+                    <div class="border-top pt-2">
+                        <div class="d-flex justify-content-between align-items-baseline gap-2">
+                            <h3 class="pokemon-skill-name">${skill.name}</h3>
+                            <span class="pokemon-skill-damage">${skill.damage}</span>
+                        </div>
+                        ${effect}
+                    </div>
+                `;
             }
 
-            details.append(number, name, tags, skills);
-            cardLayout.append(imageColumn, details);
-            card.append(cardLayout);
-            column.append(card);
-            grid.append(column);
+            elGrid.innerHTML += `
+                <div class="col-12 col-lg-6">
+                    <article class="card h-100 border-0 rounded-4 shadow-sm p-3 pokemon-box">
+                        <div class="row g-3 align-items-center h-100">
+                            <div class="col-4">
+                                <img class="img-fluid rounded-3 shadow pokemon-card-image"
+                                    src="${entry.image}"
+                                    alt="${entry.name} Pokémon card"
+                                    loading="lazy">
+                            </div>
+                            <div class="col-8 min-w-0">
+                                <span class="pokemon-number">${entry.number}</span>
+                                <h2 class="pokemon-name">${entry.name}</h2>
+                                <div class="pokemon-tags d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill text-bg-light border">${entry.stage}</span>
+                                    <span class="badge rounded-pill text-bg-light border">${entry.type}</span>
+                                    <span class="badge rounded-pill text-bg-light border">${entry.hp}</span>
+                                </div>
+                                <div class="d-grid gap-2 mt-3">
+                                    ${skills}
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            `;
         }
     </script>
 </body>
