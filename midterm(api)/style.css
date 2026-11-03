@@ -1,0 +1,188 @@
+:root {
+  color-scheme: dark;
+  --ink: #e9e3d3;
+  --muted: #9c9b96;
+  --gold: #c8aa6e;
+  --gold-bright: #f0e6d2;
+  --panel: #111820;
+  --line: rgba(200, 170, 110, .2);
+}
+
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 50% -18%, rgba(32, 75, 82, .42), transparent 54%),
+    #090d13;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.navbar {
+  background: rgba(9, 13, 19, .88);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.brand-mark,
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.brand-mark {
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.hero {
+  padding: 5.5rem 0 3rem;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--gold-bright);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  letter-spacing: .045em;
+}
+
+.hero-copy,
+.muted {
+  color: var(--muted);
+}
+
+.search-panel,
+.feature-panel,
+.champion-card {
+  background: linear-gradient(145deg, rgba(20, 29, 38, .96), rgba(13, 19, 26, .96));
+  border: 1px solid var(--line);
+}
+
+.search-panel {
+  border-radius: 1rem;
+}
+
+.form-control {
+  color: var(--ink);
+  background: #0b1118;
+  border-color: rgba(200, 170, 110, .24);
+}
+
+.form-control::placeholder {
+  color: #777c80;
+}
+
+.form-control:focus {
+  color: var(--ink);
+  background: #0b1118;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 .2rem rgba(200, 170, 110, .13);
+}
+
+.btn-gold {
+  color: #111820;
+  background: var(--gold);
+  border-color: var(--gold);
+  font-weight: 700;
+}
+
+.btn-gold:hover,
+.btn-gold:focus {
+  color: #111820;
+  background: #dfc58e;
+  border-color: #dfc58e;
+}
+
+.feature-panel {
+  overflow: hidden;
+  border-radius: 1.25rem;
+}
+
+.feature-art {
+  position: relative;
+  min-height: 390px;
+  background-color: #111820;
+  background-position: center 24%;
+  background-size: cover;
+}
+
+.feature-art::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, transparent 55%, #111820 100%),
+    linear-gradient(0deg, rgba(9, 13, 19, .35), transparent 60%);
+}
+
+.feature-content {
+  position: relative;
+  z-index: 1;
+}
+
+.champion-title {
+  color: var(--gold-bright);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.role-badge {
+  color: var(--gold-bright);
+  background: rgba(200, 170, 110, .12);
+  border: 1px solid rgba(200, 170, 110, .34);
+  font-size: .72rem;
+  letter-spacing: .08em;
+}
+
+.champion-card {
+  height: 100%;
+  overflow: hidden;
+  border-radius: .85rem;
+  cursor: pointer;
+  transition: transform .18s ease, border-color .18s ease;
+}
+
+.champion-card:hover,
+.champion-card:focus-visible {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.champion-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #0b1118;
+}
+
+.champion-card .card-body {
+  background: linear-gradient(0deg, rgba(9, 13, 19, .98), rgba(17, 24, 32, .94));
+}
+
+.section-heading {
+  color: var(--gold-bright);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.status-message {
+  color: var(--muted);
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    padding: 4rem 0 2.5rem;
+  }
+
+  .feature-art {
+    min-height: 270px;
+  }
+
+  .feature-art::after {
+    background: linear-gradient(0deg, #111820 0%, transparent 65%);
+  }
+}

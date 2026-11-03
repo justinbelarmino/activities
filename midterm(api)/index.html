@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d13">
+  <title>Rift Archive — League of Legends Champion Explorer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark">
+    <div class="container">
+      <a class="navbar-brand brand-mark" href="#" aria-label="Rift Archive home">✦ Rift Archive</a>
+      <span class="small muted d-none d-sm-inline">LEAGUE OF LEGENDS · CHAMPION INDEX</span>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero container">
+      <p class="eyebrow small mb-3">The world of Runeterra</p>
+      <h1 class="mb-3">CHAMPION ARCHIVE</h1>
+      <p class="hero-copy mx-auto mb-4" style="max-width: 540px;">
+        Discover the champions of Runeterra. Search by name or champion ID to explore their stories and roles.
+      </p>
+      <form class="search-panel p-2 mx-auto" id="searchForm" role="search" style="max-width: 680px;">
+        <div class="input-group">
+          <input type="search" class="form-control border-0 rounded-start-pill px-4 py-3" id="searchInput"
+            placeholder="Search a champion — try Ahri or 103" aria-label="Search champions" autocomplete="off">
+          <button class="btn btn-gold rounded-end-pill px-4 px-md-5" id="searchButton" type="submit">Search</button>
+        </div>
+      </form>
+      <div class="small muted mt-3" id="versionLabel" aria-live="polite">Connecting to the Data Dragon archive…</div>
+    </header>
+
+    <section class="container mb-5" aria-label="Selected champion">
+      <div class="alert alert-danger d-none" id="errorMessage" role="alert"></div>
+      <div id="featuredChampion">
+        <div class="feature-panel p-5 text-center status-message" role="status">
+          <div class="spinner-border spinner-border-sm text-warning me-2" aria-hidden="true"></div>
+          Loading the champion archive…
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5" aria-labelledby="rosterHeading">
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4">
+        <div>
+          <p class="eyebrow small mb-2">Choose your legend</p>
+          <h2 class="section-heading h3 mb-0" id="rosterHeading">Champion roster</h2>
+        </div>
+        <div class="small muted" id="rosterCount" aria-live="polite"></div>
+      </div>
+      <div class="row g-3" id="championGrid"></div>
+      <nav class="d-flex justify-content-center mt-4" id="rosterPagination" aria-label="Champion roster pages">
+        <div class="btn-group" role="group" aria-label="Roster pagination">
+          <button class="btn btn-outline-warning" id="previousPage" type="button">Previous</button>
+          <span class="btn btn-outline-warning" id="currentPage" aria-live="polite">1 / 1</span>
+          <button class="btn btn-outline-warning" id="nextPage" type="button">Next</button>
+        </div>
+      </nav>
+      <div class="status-message text-center py-4 d-none" id="emptyMessage">No champions match that search.</div>
+    </section>
+  </main>
+
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2 small">
+      <span>Champion data and artwork provided by Riot Games Data Dragon.</span>
+      <span>Not endorsed by Riot Games.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html> 
